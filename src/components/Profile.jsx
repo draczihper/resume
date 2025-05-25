@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function Profile() {
   return (
-    <section>
+    <div className="form">
       <label>Name: </label>
       <input type="text" />
 
@@ -11,6 +11,6 @@ export default function Profile() {
 
       <label>Phone: </label>
       <input type="text" />
-    </section>
+    </div>
   );
 }
