@@ -7,9 +7,22 @@
 body {
   width: 100vw;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
 }
 
-div.form {
-  width: 200px;
-  margin: 10px auto;
+div.profile-details {
+  /* width: 400px; */
+}
+
+div.profile-details label {
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+  margin-top: 10px;
+}
+
+div.profile-details input {
+ 
 }
