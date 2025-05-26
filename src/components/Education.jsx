@@ -1,5 +1,5 @@
 export default function Education() {
-
+const [value, setValue] = useState()
     return (
         <div className="education-details">
             <fieldset>
