@@ -26,7 +26,7 @@ export default function Profile() {
 
   return (
     <div className="profile-details">
-        <form action="">
+        <form>
       <Input label={"Full Name"} id={"name"}/>
       <Input label={"Email"} id={"email"}/>
       <Input label={"Phone"} id={"phone"}/>
