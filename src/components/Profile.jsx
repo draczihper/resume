@@ -5,7 +5,7 @@ function Input({label, id}) {
 
   function handleInput(e) {
   setValue(e.target.value);
-  console.log(e.target.value)
+  console.log('The value;' e.target.value)
   }
 
   return (
