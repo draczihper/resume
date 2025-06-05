@@ -8,6 +8,6 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Profile />
     <Education
-      {/*  <Experience /> */}
+    <Experience />
   </StrictMode>
 );
