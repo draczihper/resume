@@ -7,7 +7,7 @@ import Profile from "./components/Profile";import Education from "./components/E
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Profile />
-    {/* <Education />
-    <Experience /> */}
+    <Education
+      {/*  <Experience /> */}
   </StrictMode>
 );
