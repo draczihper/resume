@@ -1,5 +1,9 @@
 export default function Education() {
+const [value, setValue] = useState()
 
+    function handleInput() {
+
+    }
     return (
         <div className="education-details">
             <fieldset>
