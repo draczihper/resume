@@ -1,6 +1,13 @@
 import { Fragment, useState } from 'react';
 
-function Input({label, id, value}) {
+function Input({label, id}) {
+  const [value, setValue] = useState(' ');
+
+  function handleInput(e) {
+  setValue(e.target.value);
+  console.log('The value;' e.target.value)
+  }
+
   return (
     <label htmlFor={id}>{label}:
       <input type="text" id={id} value={value} onInput={handleInput}/>
@@ -23,23 +30,14 @@ export default function Profile() {
   }
   return (
     <>
-    <h1>Curriculum Vitae</h1>
-    <div id='container'>
-    <div className="profile-input">
+    <div className="profile-details">
         <form action="">
-      <Input label={"Full Name"} id={"name"} value={handleInput}/>
-      <Input label={"Email"} id={"email"} value={handleInput}/>
-      <Input label={"Phone"} id={"phone"} value={handleInput}/>
+      <Input label={"Full Name"} id={"name"}/>
+      <Input label={"Email"} id={"email"}/>
+      <Input label={"Phone"} id={"phone"}/>
       </form>
       <Button child={"Edit"} />
       <Button child={"Submit"} />
-    </div>
-    <div className='profile-details'>
-      <h2>Profile</h2>
-      <h3>Name: </h3>
-      <h3>Email: </h3>
-      <h3>Phone:</h3>
-      </div>
     </div>
     </>
   )
