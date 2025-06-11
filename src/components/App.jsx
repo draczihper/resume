@@ -1,16 +1,27 @@
 import { useState } from "react";
+
+const initialForm = {
+  personal: [
+    { name: "John Doe" },
+    { email: "johndoe@example.com" },
+    { name: "+1234567890" },
+  ],
+  education: [
+    { school: "Velorum University" },
+    { programme: "Astronomy" },
+    { name: "1900-1910" },
+  ],
+  experience: [
+    { company: "Canopus" },
+    { title: "Planetary Astronomer" },
+    { responsibilities: "Search for extra terrestial life" },
+  ],
+};
+
+function getKey(obj) {}
+
 function App() {
-  const [form, setForm] = useState({
-    name: "John Doe",
-    email: "johndoe@example.com",
-    phone: "+1234567890",
-    school: "Blue Sky university",
-    programme: "Astronomy",
-    year: "1850-55",
-    company: "Canopus",
-    title: "Planetary Astronomer",
-    responsibilities: "Search for extra terrestial habitable planets",
-  });
+  const [form, setForm] = useState(initialForm);
 
   const handleChange = (e) => {
     setForm({
@@ -20,73 +31,18 @@ function App() {
   };
   return (
     <>
-      <FormSection sectionName="personal">
+      {initialForm.map((section) => {
+        console.log(section);
+      })}
+      {/*<FormSection sectionName="personal">
         <Input
           id="name"
           label="name"
           value={form.name}
           onChange={handleChange}
         />
-        <Input
-          id="email"
-          label="email"
-          value={form.email}
-          onChange={handleChange}
-        />
-        <Input
-          id="phone"
-          label="phone"
-          value={form.phone}
-          onChange={handleChange}
-        />
-      </FormSection>
-
-      <FormSection sectionName="education">
-        <Input
-          id="school"
-          label="School of Study"
-          value={form.school}
-          onChange={handleChange}
-        />
-        <Input
-          id="programme"
-          label="programme"
-          value={form.programme}
-          onChange={handleChange}
-        />
-        <Input
-          id="year"
-          label="Year of Study"
-          value={form.year}
-          onChange={handleChange}
-        />
-      </FormSection>
-      <FormSection sectionName="experience">
-        <Input
-          id="company"
-          label="company"
-          value={form.company}
-          onChange={handleChange}
-        />
-        <Input
-          id="title"
-          label="title"
-          value={form.title}
-          onChange={handleChange}
-        />
-        <textarea
-          name="responsibilities"
-          id="responsibilities"
-          placeholder="What are the main responsibilities in your company?"
-        ></textarea>
-        <Input
-          inputType="date"
-          id="date"
-          label="date"
-          value={form.date}
-          onChange={handleChange}
-        />
-      </FormSection>
+  </FormSection>*/}
+      <Button text="Submit" />
       <div>
         <h1>CV</h1>
         <p>My name is {form.name}.</p>
@@ -135,4 +91,8 @@ const FormSection = (props) => {
       <form action="">{props.children}</form>
     </div>
   );
+};
+
+const Button = (props) => {
+  return <button>{props.text}</button>;
 };
