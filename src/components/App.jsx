@@ -87,6 +87,7 @@ function App() {
           onChange={handleChange}
         />
       </FormSection>
+      <Button child="Submit" />
       <div>
         <h1>CV</h1>
         <p>My name is {form.name}.</p>
@@ -135,4 +136,8 @@ const FormSection = (props) => {
       <form action="">{props.children}</form>
     </div>
   );
+};
+
+const Button = ({ child }) => {
+  return <button>{child}</button>;
 };
