@@ -107,4 +107,37 @@ export default function Form(){
   );   
 }
 
+const Input = (props) => {
+  return (
+    <div>
+      <label htmlFor={props.id}>
+        {props.label.charAt(0).toUpperCase() + props.label.slice(1)}: &nbsp;
+      </label>
+      <input
+        type={props.inputType}
+        id={props.id}
+        value={props.value}
+        onChange={props.onChange}
+      />
+    </div>
+  );
+};
+Input.defaultProps = {
+  inputType: "text",
+};
+
+const FormSection = (props) => {
+  return (
+    <div className={props.sectionName + "-form-section"} id={props.sectionName}>
+      <legend>
+        {props.sectionName.charAt(0).toUpperCase() + props.sectionName.slice(1)}
+      </legend>
+      <form action="">{props.children}</form>
+    </div>
+  );
+};
+
+const Button = ({ child }) => {
+  return <button>{child}</button>;
+};
 
