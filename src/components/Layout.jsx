@@ -4,7 +4,7 @@ import * as form from './Form'
 function Layout(){
     return (
         <>
-        <div>
+        <div className='layout'>
         <h1>CV</h1>
         <p>My name is {form.name}.</p>
         <p>
