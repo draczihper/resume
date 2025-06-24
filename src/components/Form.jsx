@@ -76,11 +76,12 @@ export default function Form(){
           value={form.title}
           onChange={handleChange}
         />
-        <textarea
-          name="responsibilities"
+        <TextArea
+          label="responsibilities"
           id="responsibilities"
-          placeholder="What are the main responsibilities in your company?"
-        ></textarea>
+          value={form.responsibilities}
+          onChange={handleChange}
+        />
         <Input
           inputType="date"
           id="date"
@@ -109,6 +110,23 @@ const Input = (props) => {
     </div>
   );
 };
+
+const TextArea = (props) => {
+  return (
+    <div>
+      <label htmlFor={props.id}>
+        {props.label.charAt(0).toUpperCase() + props.label.slice(1)}: &nbsp;
+      </label>
+      <textarea
+        type={props.inputType}
+        id={props.id}
+        value={props.value}
+        onChange={props.onChange}
+      ></textarea>
+    </div>
+  )
+}
+
 Input.defaultProps = {
   inputType: "text",
 };
