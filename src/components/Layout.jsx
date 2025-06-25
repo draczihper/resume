@@ -1,7 +1,5 @@
-import * as form from './Form'
+function Layout({form}){
 
-
-function Layout(){
     return (
         <>
         <div className='layout'>
@@ -18,6 +16,7 @@ function Layout(){
           I gained valuable knowledge and expertise that allowed me to work at{" "}
           {form.company} as a {form.title}
         </p>
+        <p>My major responsibilities where {form.responsibilities}.</p>
       </div>
         </>
     )
