@@ -10,7 +10,7 @@ export default function Form(){
     year: "1850-55",
     company: "Canopus",
     title: "Planetary Astronomer",
-    responsibilities: "Search for extra terrestial habitable planets",
+    responsibilities: "Search for extra terrestial habitable planets"
   });
 
   const handleChange = (e) => {
@@ -21,7 +21,7 @@ export default function Form(){
   };
 
   return (
-    <>
+      <>
       <FormSection sectionName="personal">
         <Input
           id="name"
@@ -77,8 +77,8 @@ export default function Form(){
           onChange={handleChange}
         />
         <TextArea
-          label="responsibilities"
           id="responsibilities"
+          label="responsibilities"
           value={form.responsibilities}
           onChange={handleChange}
         />
@@ -90,8 +90,7 @@ export default function Form(){
           onChange={handleChange}
         />
       </FormSection>
-      
-    </>
+      </>
   );   
 }
 
@@ -124,8 +123,9 @@ const TextArea = (props) => {
         onChange={props.onChange}
       ></textarea>
     </div>
-  )
+  );
 }
+
 
 Input.defaultProps = {
   inputType: "text",
