@@ -1,31 +1,34 @@
-export default function Form({form, setForm}){
+import Button from './Button'
+
+export default function Form(props){
 
   const handleChange = (e) => {
-    setForm({
-      ...form,
+    props.setForm({
+      ...props.form,
       [e.target.id]: e.target.value,
     });
   };
 
   return (
       <>
-      <FormSection sectionName="personal">
+      <FormWrapper onSubmit={props.onSubmit}>
+      <FormSection sectionName="personal" >
         <Input
           id="name"
           label="name"
-          value={form.name}
+          value={props.form.name}
           onChange={handleChange}
         />
         <Input
           id="email"
           label="email"
-          value={form.email}
+          value={props.form.email}
           onChange={handleChange}
         />
         <Input
           id="phone"
           label="phone"
-          value={form.phone}
+          value={props.form.phone}
           onChange={handleChange}
         />
       </FormSection>
@@ -34,19 +37,19 @@ export default function Form({form, setForm}){
         <Input
           id="school"
           label="School of Study"
-          value={form.school}
+          value={props.form.school}
           onChange={handleChange}
         />
         <Input
           id="programme"
           label="programme"
-          value={form.programme}
+          value={props.form.programme}
           onChange={handleChange}
         />
         <Input
           id="year"
           label="Year of Study"
-          value={form.year}
+          value={props.form.year}
           onChange={handleChange}
         />
       </FormSection>
@@ -54,29 +57,31 @@ export default function Form({form, setForm}){
         <Input
           id="company"
           label="company"
-          value={form.company}
+          value={props.form.company}
           onChange={handleChange}
         />
         <Input
           id="title"
           label="title"
-          value={form.title}
+          value={props.form.title}
           onChange={handleChange}
         />
         <TextArea
           id="responsibilities"
           label="responsibilities"
-          value={form.responsibilities}
+          value={props.form.responsibilities}
           onChange={handleChange}
         />
         <Input
           inputType="date"
           id="date"
           label="date"
-          value={form.date}
+          value={props.form.date}
           onChange={handleChange}
         />
+        <Button label="Submit" onClick={props.handleSubmit} type='submit'/>
       </FormSection>
+      </FormWrapper>
       </>
   );   
 }
@@ -124,9 +129,15 @@ const FormSection = (props) => {
       <legend>
         {props.sectionName.charAt(0).toUpperCase() + props.sectionName.slice(1)}
       </legend>
-      <form action="">{props.children}</form>
+      <div>{props.children}</div>
     </div>
   );
 };
+
+const FormWrapper = (props) => {
+  return (
+    <form onSubmit={props.onSubmit}>{props.children}</form>
+  )
+}
 
 
