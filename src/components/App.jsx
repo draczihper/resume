@@ -15,12 +15,23 @@ function App() {
     company: "Canopus",
     title: "Planetary Astronomer",
     responsibilities: "search for extra terrestial habitable planets",
-  })
+  });
+
+  const [showForm, setShowForm] = useState(true);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setShowForm(false);
+  }
+
+  const handleEdit = () => {
+    setShowForm(true);
+  }
   return (
     <>
-    <Form form={form} setForm={setForm} />
-    <Button child="Submit"/>
-    <Layout form={form} />
+    {showForm ? 
+    (<Form form={form} setForm={setForm} onSubmit={handleSubmit}/>) :
+    (<Layout form={form} onEdit={handleEdit}/>) }
     </>
   )
 }
