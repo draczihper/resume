@@ -2,6 +2,17 @@ import Button from './Button'
 
 function Layout({form, onEdit}){
 
+  const formatMonthYear = (dateStr) => {
+    if(!dateStr) return "";
+
+    const [year, month] = dateStr.split("-");
+    const date = new Date(year, month - 1) // JS month are 0 based
+    return date.toLocaleDateString("en-US", {
+      month: "long", 
+      year: "numeric"
+    });
+  }
+
     return (
         <>
         <div className='layout'>
@@ -19,6 +30,7 @@ function Layout({form, onEdit}){
           {form.company} as a {form.title}
         </p>
         <p>My major responsibilities where {form.responsibilities}.</p>
+        <p>I worked in this company from {formatMonthYear(form.date.from)} to {formatMonthYear(form.date.to)}</p>
       </div>
       <Button label="Edit" onClick={onEdit} />
         </>
