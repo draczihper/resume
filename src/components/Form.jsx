@@ -9,6 +9,19 @@ export default function Form(props){
     });
   };
 
+  const handleDateChange = (e) => {
+    const {id, value} = e.target;
+
+    props.setForm((prev) => {
+      let updatedDate = {...prev.date, [id]: value};
+
+      return {
+        ...prev,
+        date: updatedDate
+      };
+    });
+  };
+
   return (
       <>
       <FormWrapper onSubmit={props.onSubmit}>
@@ -72,13 +85,24 @@ export default function Form(props){
           value={props.form.responsibilities}
           onChange={handleChange}
         />
+        <div className='duration'>
         <Input
-          inputType="date"
-          id="date"
-          label="date"
-          value={props.form.date}
-          onChange={handleChange}
+          inputType="month"
+          id="from"
+          label="From"
+          value={props.form.date.from}
+          onChange={handleDateChange}
+          max={props.form.date.to || ""}
         />
+        <Input
+          inputType="month"
+          id="to"
+          label="To"
+          value={props.form.date.to}
+          onChange={handleDateChange}
+          min={props.form.date.from || ""}
+        />
+        </div>
         <Button label="Submit" onClick={props.handleSubmit} type='submit'/>
       </FormSection>
       </FormWrapper>
