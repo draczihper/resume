@@ -15,6 +15,10 @@ function App() {
     company: "Canopus",
     title: "Planetary Astronomer",
     responsibilities: "search for extra terrestial habitable planets",
+    date: {
+      from: "2001-01",
+      to: "2023-09",
+    }
   });
 
   const [showForm, setShowForm] = useState(true);
@@ -29,9 +33,11 @@ function App() {
   }
   return (
     <>
+    <div>
     {showForm ? 
     (<Form form={form} setForm={setForm} onSubmit={handleSubmit}/>) :
     (<Layout form={form} onEdit={handleEdit}/>) }
+    </div>
     </>
   )
 }
