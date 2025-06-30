@@ -1,1 +1,1 @@
-Cloudflare link [Cloudflare deployment](https://resume-815.pages.dev/)
+Cloudflare link [Resume](https://resume-815.pages.dev/)
