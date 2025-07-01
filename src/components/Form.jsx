@@ -103,8 +103,8 @@ export default function Form(props){
           min={props.form.date.from || ""}
         />
         </div>
-        <Button label="Submit" onClick={props.handleSubmit} type='submit'/>
       </FormSection>
+        <Button label="Submit" onClick={props.handleSubmit} type='submit'/>
       </FormWrapper>
       </>
   );   
@@ -149,11 +149,13 @@ Input.defaultProps = {
 
 const FormSection = (props) => {
   return (
-    <div className={props.sectionName + "-form-section"} id={props.sectionName}>
+    <div className='px-2 pt-4'>
       <legend>
         {props.sectionName.charAt(0).toUpperCase() + props.sectionName.slice(1)}
       </legend>
+    <div className={props.sectionName + "-form-section px-5"} id={props.sectionName} >
       <div>{props.children}</div>
+    </div>
     </div>
   );
 };
