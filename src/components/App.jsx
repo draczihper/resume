@@ -33,7 +33,7 @@ function App() {
   }
   return (
     <>
-    <div className="bg-sky-50 m-5 py-5 px-4 w-auto rounded-md shadow-xl">
+    <div className="bg-sky-50 m-5 w-auto rounded-md shadow-xl">
     {showForm ? 
     (<Form form={form} setForm={setForm} onSubmit={handleSubmit}/>) :
     (<Layout form={form} onEdit={handleEdit}/>) }
