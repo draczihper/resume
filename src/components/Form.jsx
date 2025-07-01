@@ -112,7 +112,7 @@ export default function Form(props){
 
 const Input = (props) => {
   return (
-    <div>
+    <div className='mb-1 justify-between'>
       <label htmlFor={props.id}>
         {props.label.charAt(0).toUpperCase() + props.label.slice(1)}: &nbsp;
       </label>
@@ -121,6 +121,7 @@ const Input = (props) => {
         id={props.id}
         value={props.value}
         onChange={props.onChange}
+        className="border border-[#5B6E75] px-1 py-0.5 rounded-sm"
       />
     </div>
   );
