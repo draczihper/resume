@@ -138,6 +138,7 @@ const TextArea = (props) => {
         id={props.id}
         value={props.value}
         onChange={props.onChange}
+        className="border border-[#5B6E75] px-1 py-0.5 rounded-sm w-full"
       ></textarea>
     </div>
   );
